@@ -12,9 +12,9 @@
     - ## client:only="svelte"
         - #### This value indicates that the content inside the tag should only be rendered and hydrated on the client-side, and should not be included in the server-side rendered HTML.
   
-- # Configuracion
+- # Configuration
     - ### tsconfig.json:
-    For TypeScript, set your tsconfig.json to handle Solid's JSX:
+    #### For TypeScript, set your tsconfig.json to handle Solid's JSX:
     
             "compilerOptions": {
             "jsx": "preserve",
@@ -22,7 +22,7 @@
             }  
 
     - ### astro.config.mjs:
-    To add a framework in this case Solid.js and add into integration:
+    #### To add a framework in this case Solid.js and add into integration:
  
             solid from '@astrojs/solid-js';
             export default defineConfig({

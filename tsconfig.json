@@ -4,6 +4,6 @@
     "jsx": "preserve",
     "jsxImportSource": "solid-js",
     "skipLibCheck": true,
-    "strictNullChecks": true
+    "strictNullChecks": true,
   }
 }
