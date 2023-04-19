@@ -2,7 +2,7 @@ import Counter from "../components/Counter/Counter";
 
 export default function Component(props:any) {
   return (
-    <div>
+    <div >
       <Counter values={props.values} />
     </div>
   );

@@ -6,13 +6,13 @@ import NavbarContent from '../content/NavbarContent'
 <!-- Implementacion de React Navbar -->
 <NavbarContent client:only="react" />
 
-<h1>Home</h1>
-<hr>
-<h2>No hydration</h2>
+<h1 class="text-2xl font-bold mb-4 mb-4 text-center">Home</h1>
+
+<h2 class="text-2xl font-bold mb-4 mb-4 text-center">No hydration</h2>
 <Component values={'false'} />
-<hr>
-<h2>Client:load</h2>
+
+<h2 class="text-2xl font-bold mb-4 mb-4 text-center mt-5" >Client:load</h2>
 <Component values={'true'} client:load/>
-<hr>
+
 
 
