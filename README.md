@@ -1,7 +1,7 @@
                                                      Astro Practice  
 
 
-- # Tipos de Islas:
+- # Hydration / Islands:
  - ## client:load:
       - #### This component's JS will begin importing when the page loads
  - ## client:visible
