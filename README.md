@@ -18,7 +18,7 @@
         
 - # API Reference:
     - ## Astro.glob()
-        - ## only takes one parameter: a relative URL glob of which local files you’d like to import. It’s asynchronous, and returns an array of the exports from matching files. Ej: "const posts = await Astro.glob('../pages/post/*.md');"
+        - ### only takes one parameter: a relative URL glob of which local files you’d like to import. It’s asynchronous, and returns an array of the exports from matching files. Ej: "const posts = await Astro.glob('../pages/post/*.md');"
   
 - # Configuracion
     - ### tsconfig.json:
