@@ -1,4 +1,5 @@
-                                    :dart: Astro Self-Documentation:dart:
+:dart: Astro Self-Documentation :dart:
+
 - # Hydration / Islands:
     - ## client:load
         - #### This value indicates that the content should be loaded and hydrated immediately when the page is loaded.
