@@ -12,15 +12,15 @@
 - # Configuracion
     - ### tsconfig.json
     For TypeScript, set your tsconfig.json to handle Solid's JSX:
-            "compilerOptions": {
-            "jsx": "preserve",
-            "jsxImportSource": "solid-js",
-              }  
+                "compilerOptions": {
+                "jsx": "preserve",
+                "jsxImportSource": "solid-js",
+                  }  
 
     - ### astro.config.mjs:
     To add a framework in this case Solid.js and add into integration:
  
-            solid from '@astrojs/solid-js';
-            export default defineConfig({
-    	    integrations: [solid()],
-            });
+                solid from '@astrojs/solid-js';
+                export default defineConfig({
+    	        integrations: [solid()],
+                });
