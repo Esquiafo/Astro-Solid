@@ -10,8 +10,9 @@
         - #### This value indicates that the content inside the tag should only be rendered and hydrated on the client-side, and should not be included in the server-side rendered HTML.
   
 - # Configuracion
-    - ### tsconfig.json
+    - ### tsconfig.json:
     For TypeScript, set your tsconfig.json to handle Solid's JSX:
+    
                 "compilerOptions": {
                 "jsx": "preserve",
                 "jsxImportSource": "solid-js",
