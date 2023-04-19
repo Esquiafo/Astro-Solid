@@ -1,4 +1,5 @@
-:dart: Astro Self-Documentation :dart:
+
+<center># :dart: Astro Self-Documentation :dart:</center>
 
 - # Hydration / Islands:
     - ## client:load
