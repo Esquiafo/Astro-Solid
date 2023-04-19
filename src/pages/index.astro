@@ -1,9 +1,12 @@
 ---
-import CounterContent from '../components/Counter/CounterContent'
+import Component from '../content/CounterContent'
+
 ---
-
-<h1>No using island</h1>
-<CounterContent />
-
-<h1>Client:load</h1>
-<CounterContent client:load />
+<h1>Home</h1>
+<h3><--------------></h3>
+<h2>No using island</h2>
+<Component values={'false'} />
+<h3><--------------></h3>
+<h2>Client:load</h2>
+<Component values={'true'} client:load   />
+<h3><--------------></h3>
