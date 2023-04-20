@@ -18,58 +18,49 @@ export async function getStaticPaths() {
 
 const { id } = Astro.params;
 
-//Busca en al API dependiendo del ID
-const episodeById =  async (id:any) => {
-    const response = await fetch(`https://rickandmortyapi.com/api/episode/${id}`);
+const characterById =  async (id:any) => {
+    const response = await fetch(`https://rickandmortyapi.com/api/character/${id}`);
     const data = await response.json();
    return data
 }
-//Busca en al API por URL
 const apiFetch =  async (url:any) => {
     const response = await fetch(url);
     const data = await response.json();
    return data
 }
-//Busca en al API todos los elementos
-const episodeAll =  async () => {
-    const response = await fetch(`https://rickandmortyapi.com/api/episode/`);
+const characterAll =  async () => {
+    const response = await fetch(`https://rickandmortyapi.com/api/character/`);
     const data = await response.json();
     return data
 }
 
 ---
+<NavbarContent client:only="react" />
 <div>
-      <!--   //Llamo al Navbar -->
-  <NavbarContent client:only="react" />
-      <!-- // En el caso de ser Undefined traigo todos los elementos -->
   {id == undefined ? (
-      //Espero que la API traiga los datos y luego manejo la data
-    await episodeAll().then(data => {
+    // remove the div with class 'flex flex-col lg:flex-row lg:flex-wrap lg:justify-center'
+    // since it's duplicated below and causes a syntax error
+    await characterAll().then(data => {
       return (
-      /*   Los resultados de la API los mapeo por sus resultados  */
-        <div class="flex flex-col lg:flex-row lg:flex-wrap lg:justify-center">     
-          {data.results.map((episode:any) => {
+        <div class="flex flex-col lg:flex-row lg:flex-wrap lg:justify-center">
+          {data.results.map((chracter:any) => {
             return (
-              <div class="bg-white shadow-md rounded-md mx-4 my-8 lg:w-1/4">
-                /* Traigo la vista de los episodios */
-                <Episode values={episode} client:load />
+            <div class="bg-white shadow-md rounded-md mx-4 my-8 lg:w-1/4">
+                <Characters values={chracter} /> 
                 <div class="p-4">
-                  <h2 class="text-xl font-semibold mb-4">Cast:</h2>
+                  <h2 class="text-xl font-semibold mb-4">Episode:</h2>
                   <div class="flex flex-wrap justify-center">
-                    /* Mapeo por cada personaje dentro de el episodio */
-                    {episode.characters.map(async (character:any) => {
-                      // Llamo a la api y la vuelvo asincrona
-                      const characterData = await apiFetch(character);
+                    {chracter.episode.map(async (singleEpisode:any) => {
+                      const episodeData = await apiFetch(singleEpisode);
                       return (
                         <div class="w-1/2 p-2">
-                          /* Traigo a los personajes con sus vistas */
-                          <Characters values={characterData} client:load />
+                          <Episode values={episodeData} client:load />
                         </div>
                       )
                     })}
                   </div>
-                </div>
-              </div>
+                </div>   
+            </div>
             )
           })}
         </div>
@@ -77,19 +68,19 @@ const episodeAll =  async () => {
     }).catch(err => console.error(err))
   ) : (
   <div>
-    {await episodeById(id).then( data =>{
+    {await characterById(id).then( data =>{
 return(
 <div class="bg-gray-200 overflow-x-hidden">
   <div class="bg-white shadow-md rounded-md w-screen">
-    <Episode values={data} />
+    <Characters values={data} />
     <div class="p-4">
-      <h2 class="text-xl font-semibold mb-4">Cast:</h2>
+      <h2 class="text-xl font-semibold mb-4">Episode:</h2>
       <div class="flex flex-wrap justify-center">
-        {data.characters.map(async (character:any) => {
-          const characterData = await apiFetch(character);
+        {data.episode.map(async (singelEpisode:any) => {
+          const episodeData = await apiFetch(singelEpisode);
           return (
             <div class="lg:w-1/4 md:w-1/2 w-full p-3">
-              <Characters values={characterData} />
+              <Episode values={episodeData} />
             </div>
           )
         })}
