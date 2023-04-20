@@ -3,7 +3,7 @@ export default function Characters({ values }: any) {
     <div class="bg-white shadow-md rounded-md overflow-hidden">
       
       <img class="w-24 h-24 object-cover rounded-t-md" src={values.image} alt={values.name} />
-      
+
       <div class="p-4">
         <h1 class="text-lg font-semibold mb-2">{values.name}</h1>
         <p class="text-gray-700 mb-2">Status: {values.status}</p>
