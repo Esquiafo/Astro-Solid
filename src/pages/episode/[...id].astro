@@ -51,18 +51,16 @@ const episodeAll =  async () => {
           {data.results.map((episode:any) => {
             return (
               <div class="bg-white shadow-md rounded-md mx-4 my-8 lg:w-1/4">
-                /* Traigo la vista de los episodios */
                 <Episode values={episode} client:load />
+                
                 <div class="p-4">
                   <h2 class="text-xl font-semibold mb-4">Cast:</h2>
                   <div class="flex flex-wrap justify-center">
-                    /* Mapeo por cada personaje dentro de el episodio */
                     {episode.characters.map(async (character:any) => {
                       // Llamo a la api y la vuelvo asincrona
                       const characterData = await apiFetch(character);
                       return (
                         <div class="w-1/2 p-2">
-                          /* Traigo a los personajes con sus vistas */
                           <Characters values={characterData} client:load />
                         </div>
                       )
