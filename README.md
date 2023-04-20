@@ -17,11 +17,10 @@
                 export async function getStaticPaths() {
                 const response = await fetch(URL);
                 const data = await response.json();
-                const dataResults = data.results;
-                const paths = dataResults.map((episode: any) => ({ params: { id: episode.id.toString() } }));
+                const paths = data.map((props: any) => ({ params: { id: props.id.toString() } }));
                 return [...paths,{ params: { path: undefined } }];
                 };
-        
+         
 - # API Reference:
     - ## Astro.glob()
         - #### only takes one parameter: a relative URL glob of which local files you’d like to import. It’s asynchronous, and returns an array of the exports from matching files.        
