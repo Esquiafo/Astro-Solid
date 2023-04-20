@@ -1,6 +1,5 @@
 
 <div align="center">
-
 # :dart: Astro Self-Documentation :dart:
 </div>
 
@@ -19,7 +18,7 @@
                 const response = await fetch(URL);
                 const data = await response.json();
                 const dataResults = data.results;
-                const paths = dataResults.map((episode: any) => ({ params: { id: episode.id.toString    () } }));
+                const paths = dataResults.map((episode: any) => ({ params: { id: episode.id.toString() } }));
                 return [...paths,{ params: { path: undefined } }];
                 };
         
@@ -27,6 +26,12 @@
     - ## Astro.glob()
         - #### only takes one parameter: a relative URL glob of which local files you’d like to import. It’s asynchronous, and returns an array of the exports from matching files.        
                 "const posts = await Astro.glob('../pages/post/*.md');"
+    - ## Astro.props()
+        - #### Es un objeto que contiene cualquier valor que haya sido pasado como atributo de componente     
+                "const { id } = Astro.props;"
+    - ## Astro.params()
+        - #### Es un objeto que contiene los valores de segmentos de ruta dinámica que coincidan con esta petición.     
+                "const { id } = Astro.params;"
   
 - # Configuration
     - ### tsconfig.json:
@@ -44,3 +49,4 @@
             export default defineConfig({
     	    integrations: [solid()],
             });
+            
