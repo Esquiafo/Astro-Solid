@@ -1,7 +1,7 @@
 ---
 import Episode from "../../components/Episode/id";
 import Characters from "../../components/Characters/id";
-import NavbarContent from "../../content/NavbarContent";
+import Navbar from "../../layouts/navbar.astro";
 // Limito la cantidad de Paths a buscar
 export async function getStaticPaths() {
   // Llamo a la API para ver el objeto
@@ -35,7 +35,7 @@ const characterAll =  async () => {
 }
 
 ---
-<NavbarContent client:only="react" />
+<Navbar title="Character" />
 <div>
   {id == undefined ? (
     // remove the div with class 'flex flex-col lg:flex-row lg:flex-wrap lg:justify-center'

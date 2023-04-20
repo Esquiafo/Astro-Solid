@@ -1,7 +1,7 @@
 ---
 import Episode from "../../components/Episode/id";
 import Characters from "../../components/Characters/id";
-import NavbarContent from "../../content/NavbarContent";
+import Navbar from "../../layouts/navbar.astro";
 // Limito la cantidad de Paths a buscar
 export async function getStaticPaths() {
   // Llamo a la API para ver el objeto
@@ -40,7 +40,7 @@ const episodeAll =  async () => {
 ---
 <div>
       <!--   //Llamo al Navbar -->
-  <NavbarContent client:only="react" />
+  <Navbar title="Episode" />
       <!-- // En el caso de ser Undefined traigo todos los elementos -->
   {id == undefined ? (
       //Espero que la API traiga los datos y luego manejo la data
