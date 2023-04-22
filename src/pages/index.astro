@@ -1,11 +1,21 @@
 ---
 import Component from '../content/CounterContent'
 import Navbar from '../layouts/navbar.astro';
+/* const keyAPI = import.meta.env.API_KEY
+
+const response = await fetch(`http://localhost:1337/api/users/`, 
+{headers: {
+      'Authorization': 'Bearer ' + keyAPI
+    }
+});
+const data = await response.json(); */
 
 ---
+<div class="container overflow-x-hidden">
+
 
 <!-- Implementacion de React Navbar -->
-<Navbar title="Home" />
+<Navbar  title="Home" />
 <!-- Display all of our components -->
 
 <h1 class="text-2xl font-bold mb-4 mb-4 text-center">Home</h1>
@@ -15,6 +25,9 @@ import Navbar from '../layouts/navbar.astro';
 
 <h2 class="text-2xl font-bold mb-4 mb-4 text-center mt-5" >Client:load</h2>
 <Component values={'true'} client:load/>
-
-
-
+<div>
+    <h1 class="text-2xl font-bold mb-4 mb-4 text-center pt-2">API REQUEST DATA: </h1>
+   <!--  <a class="text-lg mb-4 mb-4 text-center pt-2">   {JSON.stringify(data)} </a> -->
+ 
+</div>
+</div>

@@ -48,4 +48,11 @@
             export default defineConfig({
     	    integrations: [solid()],
             });
-            
+
+- # Environment:
+    - ### .env:      
+        - #### To store stored environment variables: 
+            API_KEY="XXXXXXXXXXXXXXX"
+
+        - #### To use stored environment variables: 
+            const keyAPI = import.meta.env.API_KEY

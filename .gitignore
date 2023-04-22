@@ -2,7 +2,8 @@
 dist/
 # generated types
 .astro/
-.vscode/
+/strapi
+/.vscode
 
 # dependencies
 node_modules/
