@@ -10,6 +10,6 @@ const {title} = Astro.props
     <title>{title}</title>
   </head>
   <body>
-    <NavbarContent client:only="react" />
+    <NavbarContent client:load client:only="react" />
   </body>
 </html>
