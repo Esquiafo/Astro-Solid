@@ -1,4 +1,45 @@
 <div align="center">
+  <h1>
+   :pencil: Strapi + GraphQL :pencil:
+  </h1>
+
+</div>
+
+# Install command
+
+        strapi new FOLDERNAME --quickstart 
+        cd FOLDERNAME
+        yarn strapi install graphql
+        yarn strapi develop 
+
+# Populate Data
+   - ## Menu | Content-type Builder |
+        - ### => Create New Collection Type <=
+
+       ![Screenshot from 2023-04-23 21-49-55](https://user-images.githubusercontent.com/57331052/233876813-91e162cf-98c5-44c9-821c-16b14c4efe0d.png)
+
+   - ### Create 3 values to this Collection
+
+        - #### Text => Name
+        - #### Rich Data => Description
+        - #### Number => Price
+
+             ![Screenshot from 2023-04-23 21-50-56](https://user-images.githubusercontent.com/57331052/233876990-70904a93-877c-4800-b5c0-d2be290253ae.png)
+
+
+   - ## Menu | Content Manager  |
+        - ### => Create new entry <= fill, save and publish values.
+
+   ![Screenshot from 2023-04-23 21-53-51](https://user-images.githubusercontent.com/57331052/233877432-bc0018da-2b2a-4b8a-979e-291b89de2f68.png)
+
+   - ## Menu | Settings |
+        - ### => Create new API TOKEN <= 
+![Screenshot from 2023-04-23 22-01-53](https://user-images.githubusercontent.com/57331052/233878413-a6bf6cc0-b5d9-4210-9cc4-7349c800282b.png)
+
+                  #### DONT FORGET TO ADD THE TOKEN INTO .ENV AS API_KEY = 'XXXXXXXXXXX'
+
+
+<div align="center">
 
 # :dart: Astro Self-Documentation :dart:
 
@@ -17,7 +58,8 @@
         - #### Returns an array of objects with a params property. Each of these objects will generate a corresponding route.
                 export async function getStaticPaths() {
                 const response = await fetch(URL);
-                const data = await response.json();
+                const data = await response.json
+                );
                 const paths = data.map((props: any) => ({ params: { id: props.id.toString() } }));
                 return [...paths,{ params: { path: undefined } }];
                 };
@@ -57,3 +99,4 @@
 
         - #### To use stored environment variables: 
                 const keyAPI = import.meta.env.API_KEY
+
