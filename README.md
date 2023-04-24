@@ -41,7 +41,9 @@
 
 
 <div align="center">
+
 # :dart: Astro Self-Documentation :dart:
+
 </div>
 
 - # Hydration / Islands:
