@@ -39,10 +39,9 @@
                   #### DONT FORGET TO ADD THE TOKEN INTO .ENV AS API_KEY = 'XXXXXXXXXXX'
 
 
+
 <div align="center">
-
 # :dart: Astro Self-Documentation :dart:
-
 </div>
 
 - # Hydration / Islands:
@@ -58,8 +57,7 @@
         - #### Returns an array of objects with a params property. Each of these objects will generate a corresponding route.
                 export async function getStaticPaths() {
                 const response = await fetch(URL);
-                const data = await response.json
-                );
+                const data = await response.json();
                 const paths = data.map((props: any) => ({ params: { id: props.id.toString() } }));
                 return [...paths,{ params: { path: undefined } }];
                 };
