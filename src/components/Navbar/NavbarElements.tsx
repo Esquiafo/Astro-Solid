@@ -40,6 +40,12 @@ export default function BigNav() {
             Episode
             </button>
             </a>
+           
+            <a href="/graphql">
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mx-4 rounded">
+            Graphql
+            </button>
+            </a>
             </div>
               
          

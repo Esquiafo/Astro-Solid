@@ -1,0 +1,46 @@
+---
+import Navbar from '../../layouts/navbar.astro'
+const KEYAPISTRAPI = import.meta.env.API_KEY
+
+const results = await fetch('http://localhost:1337/graphql', {
+    method: 'POST',
+
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": `Bearer ${KEYAPISTRAPI}`
+    },
+
+    body: JSON.stringify({
+      query: `
+      query{
+	products{
+    data{
+      attributes{
+        name
+        price
+      }
+    }
+  }
+}
+      `
+    })
+  })
+  const {data} = await results.json();
+
+---
+<Navbar title='GraphQL' />
+
+<div class="text-2xl font-bold mb-4 mb-4 text-center">
+    <h1 class="text-3xl font-bold mx-auto max-w-7xl px-4">
+      GraphQL Blog with Strapi ORM
+    </h1>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 py-8">
+    {data?.products?.data.map(x => (
+      <div class="bg-white shadow-lg rounded-lg mb-8 p-6" key={x.id}>
+        <h2 class="text-lg font-bold mb-2">Product: {x.attributes.name}</h2>
+        <p class="text-gray-700">${x.attributes.price}</p>
+      </div>
+    ))}
+  </div>

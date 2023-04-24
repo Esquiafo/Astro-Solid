@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@algolia/client-search": "^4.13.1",
+    "@apollo/client": "^3.7.12",
     "@astrojs/preact": "^2.1.0",
     "@astrojs/react": "^2.1.1",
     "@astrojs/solid-js": "^2.1.0",
