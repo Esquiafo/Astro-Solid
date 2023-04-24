@@ -36,7 +36,7 @@
         - ### => Create new API TOKEN <= 
 ![Screenshot from 2023-04-23 22-01-53](https://user-images.githubusercontent.com/57331052/233878413-a6bf6cc0-b5d9-4210-9cc4-7349c800282b.png)
 
-                  #### DONT FORGET TO ADD THE TOKEN INTO .ENV AS API_KEY = 'XXXXXXXXXXX'
+                 DONT FORGET TO ADD THE TOKEN INTO .ENV AS API_KEY = 'XXXXXXXXXXX'
 
 
 
